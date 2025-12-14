@@ -9,14 +9,14 @@ const apiRoute = require('./routes');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-/* Express middlewares setup */
-app.use(errorMiddleware);
-
 /* Express routes setup */
 app.get('/', (req, res) => {
 	res.send('🎆');
 });
 
 app.use('/api', apiRoute);
+
+/* Express middlewares setup */
+app.use(errorMiddleware);
 
 module.exports = app;

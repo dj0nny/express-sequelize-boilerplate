@@ -12,6 +12,7 @@ app.listen(port, async () => {
 		console.log(`🚀 Server's listening at: http://localhost:${port}.`);
 		await sequelize.authenticate();
 		console.log('Connection has been established successfully.');
+		await sequelize.sync();
 	} catch (error) {
 		console.error(`An error occurred: ${error}`);
 	}
